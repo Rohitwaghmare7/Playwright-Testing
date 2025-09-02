@@ -1,5 +1,6 @@
 import { Worker, NativeConnection } from '@temporalio/worker';
 import * as activities from './bot/activities.js';
+import * as playwrightActivities from './bot/playwright-activities.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -12,10 +13,16 @@ async function run() {
       address: '3.128.198.251:7233',
     });
 
+    // Merge activities from both modules
+    const mergedActivities = {
+      ...activities,
+      ...playwrightActivities
+    };
+    
     const worker = await Worker.create({
       connection,
       workflowsPath: path.join(__dirname, 'workflow'),
-      activities,
+      activities: mergedActivities,
       taskQueue: 'screenshot-task-queue',
     });
 

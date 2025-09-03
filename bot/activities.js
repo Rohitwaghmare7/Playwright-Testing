@@ -35,7 +35,7 @@ export async function takeScreenshotWithTemplate(userId) {
 
     // Launch browser
     browser = await puppeteer.launch({
-      headless: false, // Set to true for production
+      headless: true, // Set to true for production
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -133,7 +133,7 @@ export async function takeScreenshotActivity(url = 'https://www.google.com') {
 
   try {
     browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',

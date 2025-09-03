@@ -10,15 +10,17 @@
     "dev": "nodemon worker.js"
   },
   "dependencies": {
-    "@temporalio/worker": "^1.8.6",
-    "@temporalio/workflow": "^1.8.6",
     "@temporalio/activity": "^1.8.6",
     "@temporalio/client": "^1.8.6",
-    "puppeteer": "^21.5.2",
+    "@temporalio/worker": "^1.8.6",
+    "@temporalio/workflow": "^1.8.6",
+    "fs-extra": "^11.1.1",
     "playwright": "^1.40.0",
-    "fs-extra": "^11.1.1"
+    "puppeteer": "^21.5.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.3.0",
     "nodemon": "^3.0.1"
   }
 }

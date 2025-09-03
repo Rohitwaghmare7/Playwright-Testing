@@ -33,7 +33,7 @@ export async function takeScreenshotWithPlaywright(userId) {
     await fs.ensureDir(screenshotsDir);
 
     browser = await chromium.launch({
-      headless: false, 
+      headless: true, 
     });
 
     logger.info('🌐 Browser launched successfully with Playwright');
